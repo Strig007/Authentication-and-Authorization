@@ -1,0 +1,33 @@
+﻿@model List<FourthWebApp.Models.Entities.Student>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<a href="/Student/Create" class="btn btn-primary">Add Student</a>
+
+<hr />
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Date of Birth</th>
+        <th>CGPA</th>
+    </tr>
+
+    @foreach (var s in Model)
+    {
+        <tr>
+            <td>@s.Id</td>
+            <td>@s.Name</td>
+            <td>@s.Gender</td>
+            <td>@s.Dob</td>
+            <td>@s.Cgpa</td>
+            <td><a href="/Student/Edit/@s.Id" class="btn btn-success">Edit</a></td>
+            <td><a class="btn btn-danger">Delete</a></td>
+        </tr>
+    }
+</table>

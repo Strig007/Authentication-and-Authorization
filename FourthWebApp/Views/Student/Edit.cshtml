@@ -1,0 +1,27 @@
+﻿@model FourthWebApp.Models.Entities.Student
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form action="/Student/Edit" method="post">
+
+    Id: <input type="text" name="Id" class="form-control" value="@Model.Id"/>
+
+    Name : <input type="text" name="Name" class="form-control" value="@Model.Name" />
+
+    @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" }) <br />
+
+    Dob : <input type="date" name="Dob" class="form-control" value="@Model.Dob" />
+
+    @Html.ValidationMessageFor(m => m.Dob, "", new { @class = "text-danger" }) <br />
+
+    Gender : <input type="radio" name="Gender" value="Male" />Male
+    <input type="radio" name="Gender" value="Female" />Female <br />
+
+    @Html.ValidationMessageFor(m => m.Gender, "", new { @class = "text-danger" }) <br />
+
+
+    <input type="submit" name="Submit" value="Modify" class="btn btn-success" />
+</form>
